@@ -4,6 +4,7 @@ header {
     min-height: 25%;
     height: 500px;
     background-position: 45% 40%;
+    background-image:url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg');
     background-size: auto;
     background-repeat: no-repeat;
 }
@@ -26,7 +27,7 @@ nav {
 }
 
 .nav-input {
-    width: 200px;
+    width: 300px;
     height: 40px;
     background: none;
     border: none;
@@ -52,7 +53,7 @@ nav {
     background: rgb(0, 0, 0);
     color: white;
     top: 50px;
-    right: 0;
+    right: 5;
 }
 
 .movie-search {
@@ -73,17 +74,21 @@ nav {
 .movie-search:hover {
     background-color: gray;
     transition: 0.5s all;
-
+    cursor: pointer;
 }
 
 /* Conteúdo da main */
 
-.popularMovies {
+.content{
+    background-color: black;
+}
+
+.popularMovies,
+.comedyMovies {
     margin-left: 5%;
     width: 95%;
     display: flex;
     flex-direction: column;
-    background-color: black;
     border-radius: 15px;
     color: white;
     padding: 5px;
@@ -94,7 +99,8 @@ nav {
     padding: 10px;
 }
 
-#popularMoviesList {
+#popularMoviesList,
+#comedyMoviesList{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -122,16 +128,12 @@ body::-webkit-scrollbar-thumb,
 
 body::-webkit-scrollbar-thumb:hover,
 #popularMoviesList::-webkit-scrollbar-thumb:hover,
-#comedyMoviesList::-webkit-scrollbar-thumb:hover {
+#comedyMoviesList::-webkit-scrollbar-thumb:hover{
     background: #555;
     transition: 0.5s all;
 }
 
-#comedyMoviesList {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
+
 
 /* Filmes */
 .movie {
@@ -142,18 +144,18 @@ body::-webkit-scrollbar-thumb:hover,
     align-items: center;
 }
 
-.movie:hover {
-    /* background-color: rgb(42, 42, 42); */
+/* .movie img:hover {
     transform: scale(1.1);
     transition: 0.5s all;
     cursor: pointer;
-}
+} */
 
-.movie:hover .movie-image {
+.movie .movie-image:hover {
+    cursor: pointer;
     filter: brightness(70%);
     transform: scale(1.1);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.5s all;
+    transition: 0.2s all;
 }
 
 .movie-image {
@@ -179,3 +181,72 @@ body::-webkit-scrollbar-thumb:hover,
 
 /* Detalhes do filme */
 
+/* #detalhes{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.detalhe{
+    background: white;
+    width: 50%;
+    height: 80%;
+} */
+
+#popup{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    backdrop-filter: blur(5px);
+}
+#detail{
+    background-color: rgb(28, 28, 28);
+    width: 50%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+}
+#detailImage{
+    width: 50%;
+    height: 100%;
+}
+#detailMovie{
+width: 50%;
+height: 100%;
+}
+#movieName{
+width: 100%;
+height: 10%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-bottom: #555 1px solid;
+font-size: 1.5em;
+color: white;
+padding: 15px;
+}
+.sinopseLb{
+display: flex;
+align-items: center;
+justify-content: start;
+font-size: 1.5em;
+color: white;
+padding: 15px;
+}
+#sinopse{
+display: flex;
+align-items: center;
+justify-content: center;
+border-bottom: #555 1px solid;
+font-size: 1.5em;
+color: white;
+padding: 15px;
+}
