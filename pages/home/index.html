@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming</title>
+    <link rel="stylesheet" href="../../public/style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <a class="side-item-active" href="#">
+            <img src="../../public/temp/casa.png" alt="">
+            <span class="sidebar-text">Inicio</span>
+        </a>
+        <a class="side-item" href="../usuario/usuario.html">
+            <img src="../../public/temp/user.png" alt="">
+            <span class="sidebar-text">Usuário</span>
+        </a>
+    </div>
+    <header id="header">
+        <nav>
+            <div class="navList">
+                <input class="nav-input" type="text" id="searchInput" placeholder="Search for a movie...">
+                <button class="nav-item" id="searchButton"><img src="../../public/temp/big-search-len.png" alt=""
+                        width="20px"></button>
+                <div class="results" id="movieList"></div>
+            </div>
+        </nav>
+        <div id="Film">
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="popularMovies">
+                <h2 class="titulo">Filmes em alta</h2>
+                <div id="popularMoviesList" class="movie-list">
+                </div>
+            </div>
+            <div class="popularMovies">
+                <h2 class="titulo">Filmes de comédia</h2>
+                <div id="comedyMoviesList" class="movie-list">
+                </div>
+            </div>
+        </div>
+        <div id="detalhes">
+            <dialog>
+                <p>Concordo Linda</p>
+                <button id="fecharDetalhe">Fechar</button>
+            </dialog> 
+        </div>
+        <!-- <dialog>
+            <p>Concordo Linda</p>
+            <button id="fecharDetalhe">Fechar</button>
+        </dialog> -->
+    </main>
+    <footer>
+        <div class="footer">
+    </footer>
+    <script src="../../public/app.js"></script>
+</body>
+
+</html>
