@@ -29,8 +29,9 @@
                 <div class="results" id="movieList"></div>
             </div>
         </nav>
-        <!-- <div id="Film">
-        </div> -->
+        <div class="photo">
+            <img id="moviePhoto" alt="Movie Photo">
+        </div>
     </header>
     <main>
         <div class="content">
@@ -47,10 +48,27 @@
         </div>
         <div id="popup">
             <div id="detail">
-                <div id="detailImage"></div>
+                <div id="closeBtn">x</div>
+                <div id="detailImage">
+                    <img id="movieImage" alt="">
+                </div>
                 <div id="detailMovie">
+                    <p id="id"></p>
                     <p id="movieName"></p>
-                    <p class="sinopseLb">Overview:<p id="sinopse"></p></p>
+                    <p class="sinopseLb">Overview:</p>
+                    <p id="sinopse"></p>
+
+                    <div class="release">
+                        <p>Release Date:</p>
+                        <p id="releaseDate"></p>
+                    </div>
+                    <div class="avaliacao">
+                        <p>Avaliação:</p>
+                        <p id="nota"></p>
+                    </div>
+                    <button id="addFilmToFavourite">
+                        +
+                    </button>
                 </div>
             </div>
         </div>
