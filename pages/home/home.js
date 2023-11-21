@@ -2,13 +2,19 @@ let moviesData;
 let movieIndex = -1;
 function changeHeaderBackground() {
     movieIndex++;
-    if (movieIndex >= 4) {
+    if (movieIndex >= 10) {
         movieIndex = 0;
     }
     const movie = moviesData[movieIndex];
-    const header = document.getElementById('header');
-    header.style.background = 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')';
-    console.log(movieIndex);
+    const header = document.querySelector('header');
+    const infoTitle = document.getElementById('infoTitle');
+    const infoSinopse = document.getElementById('infoSinopse');
+    header.style.background = 'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')';
+    header.style.backgroundSize = '50%'
+    header.style.backgroundPosition='center'
+    header.style.backgroundRepeat='no-repeat'
+    infoTitle.textContent=movie.title;
+    infoSinopse.textContent=movie.overview;
 }
 
 document.getElementById('searchInput').addEventListener('input', function () {
@@ -23,7 +29,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
                 var titleElement = document.createElement('p');
                 var imageElement = document.createElement('img');
  
-                imageElement.src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+                imageElement.src = 'https://image.tmdb.org/t/p/original' + movie.poster_path;
                 imageElement.className = 'movie-image-search';
                 titleElement.textContent = movie.title;
                 titleElement.className = 'movie-title-search';
@@ -34,7 +40,10 @@ document.getElementById('searchInput').addEventListener('input', function () {
                 movieElement.appendChild(titleElement);
 
                 movieElement.onclick = function(){
+                    
                     const popup = document.getElementById('popup');
+                    const id = document.getElementById('id');
+                    const popular = document.getElementById('popularity');
                     const nome = document.getElementById('movieName');
                     const image = document.getElementById('movieImage');
                     const sinopse = document.getElementById('sinopse');
@@ -43,14 +52,14 @@ document.getElementById('searchInput').addEventListener('input', function () {
                     const closeBtn = document.getElementById('closeBtn');
                     
 
-                    console.log(movie)
-                    console.log(movie.backdrop_path)
                         
                         popup.style.display = "flex";
+                        id.textContent=movie.id;
+                        popular.textContent=movie.popularity;
                         nome.textContent=movie.title;
                         sinopse.textContent=movie.overview;
                         releaseDate.textContent=movie.release_date;
-                        image.src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+                        image.src = 'https://image.tmdb.org/t/p/original' + movie.poster_path;
                         nota.textContent=movie.vote_average.toFixed(1);
                         if(movie.vote_average >= 7){
                             nota.style.background = 'green';
@@ -105,7 +114,8 @@ window.onload = async function () {
                     const releaseDate = document.getElementById('releaseDate');
                     const nota = document.getElementById('nota');
                     const closeBtn = document.getElementById('closeBtn');
-                    
+
+
 
                     console.log(movie)
                     console.log(movie.backdrop_path)
@@ -207,9 +217,6 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=08f3a9006bd6335750a
             });
 });
 
-// const filme = document.getElementById('popularMoviesList')
-// const detalhes = document.querySelector('detalhes')
-// const btnFechar = document.getElementById('fecharDetalhe')
 
 const addBtn = document.getElementById('addFilmToFavourite');
 
@@ -221,21 +228,36 @@ addBtn.onclick =function addToPlaylist() {
         releaseDate: document.getElementById('releaseDate').textContent,
         rating: document.getElementById('nota').textContent,
         popularity: document.getElementById('popularity').textContent,
-        image: document.getElementById('movieImage').src
+        image: document.getElementById('movieImage').src,
+        addedAt: new Date()
     };
   
     let movies = JSON.parse(localStorage.getItem('movies')) || [];
-  
+    const popUpList = document.getElementById('popUpList');
+    const alert = document.getElementById('alert');
+
     const existingMovie = movies.find(m => m.name === movie.name && m.overview === movie.overview);
     if (existingMovie) {
-        console.log("Já tem");
+        console.log("Já tem")
+        popUpList.style.display='flex';
+        popUpList.className="Errado"
+        alert.textContent = "Este filme já foi adicionado aos favoritos";
+        setTimeout(() => {
+            popUpList.style.display = 'none';
+        }, 3000);
         return;
+    }else{
+        popUpList.style.display='flex';
+        popUpList.className="Correto"
+        alert.textContent = "Adicionado aos favoritos";
+        setTimeout(() => {
+            popUpList.style.display = 'none';
+        }, 3000);
     }
   
     movies.push(movie);
     localStorage.setItem('movies', JSON.stringify(movies));
-  
+    
     console.log(JSON.parse(localStorage.getItem('movies')));
 }
-
 

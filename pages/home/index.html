@@ -20,7 +20,7 @@
             <span class="sidebar-text">Usuário</span>
         </a>
     </div>
-    <header id="header">
+    <header>
         <nav>
             <div class="navList">
                 <input class="nav-input" type="text" id="searchInput" placeholder="Search for a movie...">
@@ -29,6 +29,15 @@
                 <div class="results" id="movieList"></div>
             </div>
         </nav>
+        <div class="infoBackground">
+            <div id="infoBackgroundLeft">
+                <p id="infoTitle"></p>
+                <p class="sinopseLb">Sinopse:</p>
+                <p id="infoSinopse"></p>
+            </div>
+            <!-- <div id="infoBackgroundRight"></div> -->
+        </div>
+        
     </header>
     <main>
         <div class="content">
@@ -61,7 +70,7 @@
                         <p id="releaseDate"></p>
                     </div>
                     <div class="avaliacao">
-                        <p>Avaliação:</p>
+                        <p>Rating:</p>
                         <p id="nota"></p>
                     </div>
                     <p id="popularity"></p>
@@ -69,6 +78,11 @@
                         +
                     </button>
                 </div>
+            </div>
+        </div>
+        <div id="popUp">
+            <div id="popUpList">
+                <p id="alert"></p>
             </div>
         </div>
     </main>

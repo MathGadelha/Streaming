@@ -56,8 +56,8 @@ main{
    height: 100px;
    border-radius: 100%;
    border: white 1px solid;
+   background-size: 100%;
 }
-
 
 
 

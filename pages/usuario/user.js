@@ -1,6 +1,13 @@
 window.onload = async function () {
-    console.log(JSON.parse(localStorage.getItem('movies')));
-}
+let movies = JSON.parse(localStorage.getItem('movies')) || [];
+let favoriteMovies = document.getElementById('favorite-movies');
+let currentImageIndex = 0;
 
-const lista = document.getElementById('favorite-movies');
-lista.href="../lista/list.html";
+setInterval(function() {
+   if (currentImageIndex >= movies.length) {
+       currentImageIndex = 0;
+   }
+   favoriteMovies.style.backgroundImage = "url('" + movies[currentImageIndex].image + "')";
+   currentImageIndex++;
+}, 5000); 
+}

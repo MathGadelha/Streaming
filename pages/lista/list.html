@@ -11,9 +11,19 @@
 
 <body>
     <header>
-        <a href="../usuario/usuario.html" class="btnVoltar">
-            Voltar
-        </a>
+        <div class="btns">
+            <a href="../usuario/usuario.html" class="btnVoltar">
+                Voltar
+            </a>
+            <button id="filterBtn">Filtros</button>
+                <div id="filterMenu" style="display: none;">
+                <button id="btnOrderAsc">A-Z</button>
+                <button id="btnOrderDesc">Z-A</button>
+                <button id="btnOrderRecent">Recente</button>
+                <button id="btnOrderOlder">Antigo</button>
+            </div>
+        </div>
+        
         <h1 class="header-title">Meus Favoritos</h1>
      </header>
     <main>
@@ -37,7 +47,7 @@
                         <p id="releaseDate"></p>
                     </div>
                     <div class="avaliacao">
-                        <p>Avaliação:</p>
+                        <p>Rating:</p>
                         <p id="nota"></p>
                     </div>
                     <button id="removeFilmFromFavourite">-</button>
