@@ -3,14 +3,8 @@ header {
     width: 95%;
     min-height: 25%;
     height: 500px;
-}
-.photo{
-    width: 100%;
-    height: 100%;
-}
-.photo img{
-    width: 100%;
-    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Nav Itens*/
@@ -61,7 +55,7 @@ nav {
     position: absolute;
     background: rgb(0, 0, 0);
     color: white;
-    top: 75px;
+    top: 50px;
     right: 5;
 }
 

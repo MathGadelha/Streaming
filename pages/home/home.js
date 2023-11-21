@@ -6,8 +6,8 @@ function changeHeaderBackground() {
         movieIndex = 0;
     }
     const movie = moviesData[movieIndex];
-    const img = document.getElementById('moviePhoto');
-    img.src = 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path;
+    const header = document.getElementById('header');
+    header.style.background = 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')';
     console.log(movieIndex);
 }
 
@@ -79,7 +79,7 @@ window.onload = async function () {
             var movieList = document.getElementById('popularMoviesList');
             moviesData = data.results;
             changeHeaderBackground();
-            setInterval(changeHeaderBackground, 1000000);
+            setInterval(changeHeaderBackground, 10000);
 
             data.results.slice(0, 10).forEach(movie => {
                 var movieElement = document.createElement('div');

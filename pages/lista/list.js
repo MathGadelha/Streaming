@@ -69,15 +69,6 @@ movies.forEach(movie => {
         popup.style.display = "none";
         location.reload();
         }
-        document.getElementById('sortByRatingAsc').onclick = function() {
-            movies.name.sort(a, b)
-            location.reload();
-         };
-         
-         document.getElementById('sortByRatingDesc').onclick = function() {
-            movies.sort((a, b) => b.rating - a.rating);
-            location.reload();
-         };
 }
 closeBtn.onclick = function(){
         popup.style.display = "none";
