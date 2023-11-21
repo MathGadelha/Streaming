@@ -2,6 +2,7 @@ window.onload = async function () {
 let movies = JSON.parse(localStorage.getItem('movies')) || [];
 let favoriteMovies = document.getElementById('favorite-movies');
 let currentImageIndex = 0;
+favoriteMovies.style.backgroundImage = "url('" + movies[currentImageIndex].image + "')";
 
 setInterval(function() {
    if (currentImageIndex >= movies.length) {
@@ -9,5 +10,5 @@ setInterval(function() {
    }
    favoriteMovies.style.backgroundImage = "url('" + movies[currentImageIndex].image + "')";
    currentImageIndex++;
-}, 5000); 
+}, 3000); 
 }
