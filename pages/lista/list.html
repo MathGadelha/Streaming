@@ -11,10 +11,39 @@
 
 <body>
     <header>
-
-    </header>
+        <a href="../usuario/usuario.html" class="btnVoltar">
+            Voltar
+        </a>
+        <h1 class="header-title">Meus Favoritos</h1>
+     </header>
     <main>
-        <div id="movieList"></div>
+        <div class="content">
+            <div id="movieList"></div>
+        </div>
+        <div id="popup">
+            <div id="detail">
+                <div id="closeBtn">x</div>
+                <div id="detailImage">
+                    <img id="movieImage" alt="">
+                </div>
+                <div id="detailMovie">
+                    <p id="id"></p>
+                    <p id="movieName"></p>
+                    <p class="sinopseLb">Overview:</p>
+                    <p id="sinopse"></p>
+
+                    <div class="release">
+                        <p>Release Date:</p>
+                        <p id="releaseDate"></p>
+                    </div>
+                    <div class="avaliacao">
+                        <p>Avaliação:</p>
+                        <p id="nota"></p>
+                    </div>
+                    <button id="removeFilmFromFavourite">-</button>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
 

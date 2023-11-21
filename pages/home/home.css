@@ -21,8 +21,7 @@ nav {
     height: 100px;
     display: flex;
     justify-content: end;
-    position: fixed;
-    align-items: center;
+    position: absolute;
     z-index: 1;
     top: 0;
     right: 0;
@@ -94,7 +93,8 @@ nav {
 }
 
 .popularMovies,
-.comedyMovies {
+.comedyMovies,
+.actionMovies {
     margin-left: 5%;
     width: 95%;
     display: flex;
@@ -222,6 +222,12 @@ width: 50%;
 height: 100%;
 overflow: auto;
 }
+#id{
+    display: none;
+}
+#popularity{
+    display: none;
+}
 #movieName{
 width: 100%;
 height: 10%;
@@ -322,3 +328,4 @@ padding: 15px;
     background-color: white;
     color: black;
 }
+

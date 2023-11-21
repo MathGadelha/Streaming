@@ -1,0 +1,248 @@
+header {
+    display: flex;
+    width: 100%;
+    height: 50%;
+ }
+ 
+ .header-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+ }
+main{
+    width: 100%;
+    height: 80%;
+}
+.btnVoltar{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    background: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.btnVoltar:hover{
+    background: rgb(55, 55, 55);
+    color: white;
+    cursor: pointer;
+    /* transform: scale(1.1); */
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.movie{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    background-color: rgb(55, 55, 55);
+    transition: 0.5s;
+    border-radius: 15px;
+}
+.movie:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(75, 75, 75);
+}
+#movieList{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.movie-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+.movieGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    background-color: black;
+    padding: 15px;
+}
+   
+#popup{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    backdrop-filter: blur(5px);
+}
+#detail{
+    background-color: rgb(28, 28, 28);
+    width: 50%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+}
+#detailImage{
+    width: 50%;
+    height: 100%;
+}
+#detailImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#detailMovie{
+width: 50%;
+height: 100%;
+overflow: auto;
+}
+#movieName{
+width: 100%;
+height: 10%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-bottom: #555 1px solid;
+font-size: 100%;
+color: white;
+padding: 15px;
+}
+.sinopseLb{
+display: flex;
+align-items: center;
+justify-content: start;
+font-size: 1.5em;
+color: white;
+padding: 15px;
+}
+#sinopse{
+display: flex;
+align-items: center;
+justify-content: center;
+border-bottom: #555 1px solid;
+font-size: 100%;
+color: white;
+padding: 15px;
+}
+.release{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: start;
+font-size: 100%;
+color: white;
+padding: 15px;
+}
+#releaseDate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: #555 1px solid;
+    font-size: 100%;
+    color: white;    
+    margin-left: 5px;
+}
+.avaliacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: 100%;
+    color: white;
+    padding: 15px;
+}
+#nota{
+    padding: 5px;
+    border-radius: 5px;
+}
+#closeBtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top:10%;
+    right:24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.5s;
+    color: white;
+    background-color: #c40404;
+    border: 1px solid white;
+    font-size: 1.5em;
+}
+#closeBtn:hover{
+    transform: scale(1.2);
+    background-color: #df0404;
+}
+
+#addFilmToFavourite{
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: white 3px solid;
+    background: none;
+    font-size: 50px;
+    color: white;
+}
+#addFilmToFavourite:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s all;
+    background-color: white;
+    color: black;
+}
+
+#removeFilmFromFavourite{
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: rgb(249, 5, 5) 3px solid;
+    background: none;
+    font-size: 50px;
+    color: white;
+}
+#removeFilmFromFavourite:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s all;
+    background-color: rgb(255, 0, 0);
+}

@@ -90,8 +90,6 @@ window.onload = async function () {
                 id = movieElement.dataset.id = movie.id;
                 imageElement.src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
                 imageElement.className = 'movie-image';
-                // titleElement.textContent = movie.title;
-                // titleElement.className = 'movie-title';
                 movieElement.className = 'movie';
 
                 movieElement.appendChild(imageElement);
@@ -99,6 +97,8 @@ window.onload = async function () {
                 movieElement.appendChild(titleElement);
                 movieElement.onclick = function(){
                     const popup = document.getElementById('popup');
+                    const id = document.getElementById('id');
+                    const popular = document.getElementById('popularity');
                     const nome = document.getElementById('movieName');
                     const image = document.getElementById('movieImage');
                     const sinopse = document.getElementById('sinopse');
@@ -111,6 +111,8 @@ window.onload = async function () {
                     console.log(movie.backdrop_path)
                         
                         popup.style.display = "flex";
+                        id.textContent=movie.id;
+                        popular.textContent=movie.popularity;
                         nome.textContent=movie.title;
                         sinopse.textContent=movie.overview;
                         releaseDate.textContent=movie.release_date;
@@ -141,6 +143,7 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=08f3a9006bd6335750a
     .then(data => {
         const comedyGenreId = data.genres.find(genre => genre.name === 'Comedy').id;
 
+        // comedia
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=08f3a9006bd6335750aa0ab46d5a3f17&with_genres=${comedyGenreId}&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
             .then(response => response.json())
             .then(data => {
@@ -154,9 +157,6 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=08f3a9006bd6335750a
 
                     imageElement.src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
                     imageElement.className = 'movie-image';
-                    // titleElement.textContent = movie.title;
-                    // titleElement.className = 'movie-title';
-                    
 
                     movieElement.className = 'movie';
 
@@ -166,7 +166,8 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=08f3a9006bd6335750a
                    
                     movieElement.onclick = function(){
                         const popup = document.getElementById('popup');
-                        const id = document.getElementById('id')
+                        const id = document.getElementById('id');
+                        const popular = document.getElementById('popularity');
                         const nome = document.getElementById('movieName');
                         const image = document.getElementById('movieImage');
                         const sinopse = document.getElementById('sinopse');
@@ -179,6 +180,8 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=08f3a9006bd6335750a
                         console.log(movie.backdrop_path)
                             
                             popup.style.display = "flex";
+                            id.textContent=movie.id;
+                            popular.textContent=movie.popularity;
                             nome.textContent=movie.title;
                             sinopse.textContent=movie.overview;
                             releaseDate.textContent=movie.release_date;
@@ -202,11 +205,7 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=08f3a9006bd6335750a
             .catch(error => {
                 console.error(error);
             });
-    })
-    .catch(error => {
-        console.error(error);
-    });
-
+});
 
 // const filme = document.getElementById('popularMoviesList')
 // const detalhes = document.querySelector('detalhes')
@@ -216,10 +215,12 @@ const addBtn = document.getElementById('addFilmToFavourite');
 
 addBtn.onclick =function addToPlaylist() {
     const movie = {
+        id: document.getElementById('id').textContent,
         name: document.getElementById('movieName').textContent,
         overview: document.getElementById('sinopse').textContent,
         releaseDate: document.getElementById('releaseDate').textContent,
         rating: document.getElementById('nota').textContent,
+        popularity: document.getElementById('popularity').textContent,
         image: document.getElementById('movieImage').src
     };
   
